@@ -78,12 +78,16 @@ public:
     QPushButton *btn_devide;
     QLineEdit *textDisplay;
     QLabel *lblshowoperator;
+    QLabel *label;
+    QWidget *widget_thermo;
+    QPushButton *btn_g_thermo;
+    QPushButton *btn_go_cal;
 
     void setupUi(QMainWindow *Calculator)
     {
         if (Calculator->objectName().isEmpty())
             Calculator->setObjectName(QStringLiteral("Calculator"));
-        Calculator->resize(904, 555);
+        Calculator->resize(904, 590);
         Calculator->setStyleSheet(QLatin1String("QMainWindow {\n"
 "  background-color: rgb(234, 236, 238);\n"
 "  border: 1px solid gray;\n"
@@ -94,7 +98,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(20, 110, 861, 429));
+        horizontalLayoutWidget->setGeometry(QRect(20, 140, 861, 429));
         horizontalLayout_7 = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout_7->setSpacing(6);
         horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
@@ -859,7 +863,7 @@ public:
 
         textDisplay = new QLineEdit(centralWidget);
         textDisplay->setObjectName(QStringLiteral("textDisplay"));
-        textDisplay->setGeometry(QRect(20, 20, 861, 81));
+        textDisplay->setGeometry(QRect(20, 50, 861, 81));
         QFont font1;
         font1.setPointSize(18);
         textDisplay->setFont(font1);
@@ -871,11 +875,34 @@ public:
         textDisplay->setReadOnly(true);
         lblshowoperator = new QLabel(centralWidget);
         lblshowoperator->setObjectName(QStringLiteral("lblshowoperator"));
-        lblshowoperator->setGeometry(QRect(30, 30, 841, 31));
+        lblshowoperator->setGeometry(QRect(30, 60, 841, 31));
         QFont font2;
         font2.setPointSize(9);
         lblshowoperator->setFont(font2);
         lblshowoperator->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(30, 10, 301, 31));
+        QFont font3;
+        font3.setFamily(QStringLiteral("Papyrus"));
+        font3.setPointSize(16);
+        font3.setBold(true);
+        font3.setWeight(75);
+        label->setFont(font3);
+        widget_thermo = new QWidget(centralWidget);
+        widget_thermo->setObjectName(QStringLiteral("widget_thermo"));
+        widget_thermo->setGeometry(QRect(20, 140, 431, 431));
+        widget_thermo->setAutoFillBackground(false);
+        widget_thermo->setStyleSheet(QLatin1String("QWidget {\n"
+"  background-color: rgb(234, 236, 238);\n"
+"  \n"
+"}"));
+        btn_g_thermo = new QPushButton(centralWidget);
+        btn_g_thermo->setObjectName(QStringLiteral("btn_g_thermo"));
+        btn_g_thermo->setGeometry(QRect(780, 10, 93, 28));
+        btn_go_cal = new QPushButton(centralWidget);
+        btn_go_cal->setObjectName(QStringLiteral("btn_go_cal"));
+        btn_go_cal->setGeometry(QRect(680, 10, 93, 28));
         Calculator->setCentralWidget(centralWidget);
 
         retranslateUi(Calculator);
@@ -928,6 +955,9 @@ public:
         btn_devide->setText(QApplication::translate("Calculator", "/", Q_NULLPTR));
         textDisplay->setPlaceholderText(QApplication::translate("Calculator", "0", Q_NULLPTR));
         lblshowoperator->setText(QString());
+        label->setText(QApplication::translate("Calculator", "Sciencetific Calculator", Q_NULLPTR));
+        btn_g_thermo->setText(QApplication::translate("Calculator", "Thermo Cal", Q_NULLPTR));
+        btn_go_cal->setText(QApplication::translate("Calculator", "Science Cal", Q_NULLPTR));
     } // retranslateUi
 
 };

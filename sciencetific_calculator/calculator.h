@@ -34,6 +34,42 @@ private slots:
 
     void on_btn_pi_clicked();
 
+    void on_btn_log_clicked();
+
+    void on_btn_sqrt_clicked();
+
+    void on_btn_sina_clicked();
+
+    void on_btn_cosa_clicked();
+
+    void on_btn_tana_clicked();
+
+    void on_btn_sin_clicked();
+
+    void on_btn_cos_clicked();
+
+    void on_btn_tan_clicked();
+
+    void on_btn_bin_clicked();
+
+    void on_btn_oct_clicked();
+
+    void on_btn_hex_clicked();
+
+    void on_btn_pow2_clicked();
+
+    void on_btn_pow3_clicked();
+
+    void on_btn_1devx_clicked();
+
+    void on_btn_lnx_clicked();
+
+
+
+    void on_btn_go_cal_clicked();
+
+    void on_btn_g_thermo_clicked();
+
 private:
     Ui::Calculator *ui;
 };
