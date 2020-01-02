@@ -40,7 +40,7 @@ public:
     QPushButton *btn_presantage;
     QPushButton *btn_hex;
     QPushButton *btn_mod;
-    QPushButton *bt_exp;
+    QPushButton *btn_exp;
     QPushButton *btn_1devx;
     QPushButton *btn_bin;
     QPushButton *btn_cosa;
@@ -239,12 +239,12 @@ public:
 
         gridLayout->addWidget(btn_mod, 4, 1, 1, 1);
 
-        bt_exp = new QPushButton(horizontalLayoutWidget);
-        bt_exp->setObjectName(QStringLiteral("bt_exp"));
-        sizePolicy.setHeightForWidth(bt_exp->sizePolicy().hasHeightForWidth());
-        bt_exp->setSizePolicy(sizePolicy);
-        bt_exp->setFont(font);
-        bt_exp->setStyleSheet(QLatin1String("QPushButton {\n"
+        btn_exp = new QPushButton(horizontalLayoutWidget);
+        btn_exp->setObjectName(QStringLiteral("btn_exp"));
+        sizePolicy.setHeightForWidth(btn_exp->sizePolicy().hasHeightForWidth());
+        btn_exp->setSizePolicy(sizePolicy);
+        btn_exp->setFont(font);
+        btn_exp->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
 "  color: white; \n"
 "  border: 1px solid gray;\n"
@@ -255,7 +255,7 @@ public:
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
 "}"));
 
-        gridLayout->addWidget(bt_exp, 4, 0, 1, 1);
+        gridLayout->addWidget(btn_exp, 4, 0, 1, 1);
 
         btn_1devx = new QPushButton(horizontalLayoutWidget);
         btn_1devx->setObjectName(QStringLiteral("btn_1devx"));
@@ -873,7 +873,7 @@ public:
         lblshowoperator->setObjectName(QStringLiteral("lblshowoperator"));
         lblshowoperator->setGeometry(QRect(30, 30, 841, 31));
         QFont font2;
-        font2.setPointSize(10);
+        font2.setPointSize(9);
         lblshowoperator->setFont(font2);
         lblshowoperator->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         Calculator->setCentralWidget(centralWidget);
@@ -893,7 +893,7 @@ public:
         btn_presantage->setText(QApplication::translate("Calculator", "%", Q_NULLPTR));
         btn_hex->setText(QApplication::translate("Calculator", "Hex", Q_NULLPTR));
         btn_mod->setText(QApplication::translate("Calculator", "Mod", Q_NULLPTR));
-        bt_exp->setText(QApplication::translate("Calculator", "Exp", Q_NULLPTR));
+        btn_exp->setText(QApplication::translate("Calculator", "Exp", Q_NULLPTR));
         btn_1devx->setText(QApplication::translate("Calculator", "1/x", Q_NULLPTR));
         btn_bin->setText(QApplication::translate("Calculator", "Bin", Q_NULLPTR));
         btn_cosa->setText(QApplication::translate("Calculator", "Cos A", Q_NULLPTR));
