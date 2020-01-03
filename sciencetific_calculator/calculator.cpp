@@ -340,4 +340,63 @@ void Calculator::on_btn_go_cal_clicked()
 void Calculator::on_btn_g_thermo_clicked()
 {
     ui->widget_thermo->setVisible(true);
+
+    ui->btn_plus->setEnabled(false);
+    ui->btn_minus->setEnabled(false);
+    ui->btn_devide->setEnabled(false);
+    ui->btn_multiple->setEnabled(false);
+    ui->btn_eqal->setEnabled(false);
+}
+
+void Calculator::on_radio_ctof_clicked()
+{
+     choise = 1;
+}
+
+void Calculator::on_radio_ftoc_clicked()
+{
+     choise = 2;
+}
+
+void Calculator::on_radio_ctok_clicked()
+{
+     choise = 3;
+}
+
+void Calculator::on_radioktoc_clicked()
+{
+     choise = 4;
+}
+
+void Calculator::on_btn_converte_clicked()
+{
+    if(choise == 1)
+    {
+        double cle = ui->textDisplay->text().toDouble();
+        double far = (((cle*9)/5)+32);
+        ui->lblshowoperator->setText(QString::number(cle)+" C Convert to Fahrenheit ");
+        ui->textDisplay->setText(QString::number(far)+" F");
+
+    }else if(choise == 2)
+    {
+        double far = ui->textDisplay->text().toDouble();
+        double cle = (((far-32)*5)/9);
+        ui->textDisplay->setText(QString::number(cle)+" c");
+        ui->lblshowoperator->setText(QString::number(far)+" F Convert to Celsius ");
+
+    }else if (choise == 3)
+        {
+            double cle = ui->textDisplay->text().toDouble();
+            double far = (cle+273.15);
+            ui->textDisplay->setText(QString::number(far)+" K");
+            ui->lblshowoperator->setText(QString::number(cle)+" c Convert to Kelvin ");
+
+    }else if(choise == 4)
+        {
+            double far = ui->textDisplay->text().toDouble();
+            double kel = (((far-32)*5)/9)+273.15;
+            ui->textDisplay->setText(QString::number(kel)+" c");
+            ui->lblshowoperator->setText(QString::number(far)+" K Convert to Celsius ");
+
+        }
 }

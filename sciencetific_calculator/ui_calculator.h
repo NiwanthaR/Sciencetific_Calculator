@@ -20,6 +20,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 
@@ -33,26 +34,26 @@ public:
     QHBoxLayout *horizontalLayout_7;
     QHBoxLayout *horizontalLayout_9;
     QGridLayout *gridLayout;
-    QPushButton *btn_tana;
     QPushButton *btn_lnx;
     QPushButton *btn_oct;
     QPushButton *btn_tan;
-    QPushButton *btn_presantage;
+    QPushButton *btn_tana;
     QPushButton *btn_hex;
     QPushButton *btn_mod;
-    QPushButton *btn_exp;
-    QPushButton *btn_1devx;
-    QPushButton *btn_bin;
+    QPushButton *btn_presantage;
     QPushButton *btn_cosa;
-    QPushButton *btn_cos;
-    QPushButton *btn_pow3;
+    QPushButton *btn_1devx;
+    QPushButton *btn_exp;
+    QPushButton *btn_bin;
     QPushButton *btn_pow;
+    QPushButton *btn_pow3;
+    QPushButton *btn_cos;
+    QPushButton *btn_pow2;
     QPushButton *btn_sina;
     QPushButton *btn_sin;
-    QPushButton *btn_pow2;
     QPushButton *btn_sqrt;
-    QPushButton *btn_log;
     QPushButton *btn_pi;
+    QPushButton *btn_log;
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout_8;
     QGridLayout *gridLayout_4;
@@ -80,6 +81,12 @@ public:
     QLabel *lblshowoperator;
     QLabel *label;
     QWidget *widget_thermo;
+    QRadioButton *radio_ctof;
+    QRadioButton *radio_ftoc;
+    QRadioButton *radio_ctok;
+    QRadioButton *radioktoc;
+    QLabel *label_2;
+    QPushButton *btn_converte;
     QPushButton *btn_g_thermo;
     QPushButton *btn_go_cal;
 
@@ -87,7 +94,7 @@ public:
     {
         if (Calculator->objectName().isEmpty())
             Calculator->setObjectName(QStringLiteral("Calculator"));
-        Calculator->resize(904, 590);
+        Calculator->resize(901, 588);
         Calculator->setStyleSheet(QLatin1String("QMainWindow {\n"
 "  background-color: rgb(234, 236, 238);\n"
 "  border: 1px solid gray;\n"
@@ -112,33 +119,15 @@ public:
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setSizeConstraint(QLayout::SetFixedSize);
         gridLayout->setContentsMargins(0, -1, -1, -1);
-        btn_tana = new QPushButton(horizontalLayoutWidget);
-        btn_tana->setObjectName(QStringLiteral("btn_tana"));
+        btn_lnx = new QPushButton(horizontalLayoutWidget);
+        btn_lnx->setObjectName(QStringLiteral("btn_lnx"));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(btn_tana->sizePolicy().hasHeightForWidth());
-        btn_tana->setSizePolicy(sizePolicy);
-        QFont font;
-        font.setPointSize(12);
-        btn_tana->setFont(font);
-        btn_tana->setStyleSheet(QLatin1String("QPushButton {\n"
-"  background-color: rgb(195, 155, 211);\n"
-"  color: white; \n"
-"  border: 1px solid gray;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
-"}"));
-
-        gridLayout->addWidget(btn_tana, 3, 1, 1, 1);
-
-        btn_lnx = new QPushButton(horizontalLayoutWidget);
-        btn_lnx->setObjectName(QStringLiteral("btn_lnx"));
         sizePolicy.setHeightForWidth(btn_lnx->sizePolicy().hasHeightForWidth());
         btn_lnx->setSizePolicy(sizePolicy);
+        QFont font;
+        font.setPointSize(12);
         btn_lnx->setFont(font);
         btn_lnx->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -149,6 +138,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_lnx, 3, 3, 1, 1);
@@ -167,6 +160,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_oct, 3, 2, 1, 1);
@@ -185,16 +182,20 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_tan, 3, 0, 1, 1);
 
-        btn_presantage = new QPushButton(horizontalLayoutWidget);
-        btn_presantage->setObjectName(QStringLiteral("btn_presantage"));
-        sizePolicy.setHeightForWidth(btn_presantage->sizePolicy().hasHeightForWidth());
-        btn_presantage->setSizePolicy(sizePolicy);
-        btn_presantage->setFont(font);
-        btn_presantage->setStyleSheet(QLatin1String("QPushButton {\n"
+        btn_tana = new QPushButton(horizontalLayoutWidget);
+        btn_tana->setObjectName(QStringLiteral("btn_tana"));
+        sizePolicy.setHeightForWidth(btn_tana->sizePolicy().hasHeightForWidth());
+        btn_tana->setSizePolicy(sizePolicy);
+        btn_tana->setFont(font);
+        btn_tana->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
 "  color: white; \n"
 "  border: 1px solid gray;\n"
@@ -203,9 +204,13 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
-        gridLayout->addWidget(btn_presantage, 4, 3, 1, 1);
+        gridLayout->addWidget(btn_tana, 3, 1, 1, 1);
 
         btn_hex = new QPushButton(horizontalLayoutWidget);
         btn_hex->setObjectName(QStringLiteral("btn_hex"));
@@ -221,6 +226,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_hex, 4, 2, 1, 1);
@@ -239,16 +248,20 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_mod, 4, 1, 1, 1);
 
-        btn_exp = new QPushButton(horizontalLayoutWidget);
-        btn_exp->setObjectName(QStringLiteral("btn_exp"));
-        sizePolicy.setHeightForWidth(btn_exp->sizePolicy().hasHeightForWidth());
-        btn_exp->setSizePolicy(sizePolicy);
-        btn_exp->setFont(font);
-        btn_exp->setStyleSheet(QLatin1String("QPushButton {\n"
+        btn_presantage = new QPushButton(horizontalLayoutWidget);
+        btn_presantage->setObjectName(QStringLiteral("btn_presantage"));
+        sizePolicy.setHeightForWidth(btn_presantage->sizePolicy().hasHeightForWidth());
+        btn_presantage->setSizePolicy(sizePolicy);
+        btn_presantage->setFont(font);
+        btn_presantage->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
 "  color: white; \n"
 "  border: 1px solid gray;\n"
@@ -257,45 +270,13 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
-"}"));
-
-        gridLayout->addWidget(btn_exp, 4, 0, 1, 1);
-
-        btn_1devx = new QPushButton(horizontalLayoutWidget);
-        btn_1devx->setObjectName(QStringLiteral("btn_1devx"));
-        sizePolicy.setHeightForWidth(btn_1devx->sizePolicy().hasHeightForWidth());
-        btn_1devx->setSizePolicy(sizePolicy);
-        btn_1devx->setFont(font);
-        btn_1devx->setStyleSheet(QLatin1String("QPushButton {\n"
-"  background-color: rgb(195, 155, 211);\n"
-"  color: white; \n"
-"  border: 1px solid gray;\n"
 "}\n"
 "\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
-        gridLayout->addWidget(btn_1devx, 2, 3, 1, 1);
-
-        btn_bin = new QPushButton(horizontalLayoutWidget);
-        btn_bin->setObjectName(QStringLiteral("btn_bin"));
-        sizePolicy.setHeightForWidth(btn_bin->sizePolicy().hasHeightForWidth());
-        btn_bin->setSizePolicy(sizePolicy);
-        btn_bin->setFont(font);
-        btn_bin->setStyleSheet(QLatin1String("QPushButton {\n"
-"  background-color: rgb(195, 155, 211);\n"
-"  color: white; \n"
-"  border: 1px solid gray;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
-"}"));
-
-        gridLayout->addWidget(btn_bin, 2, 2, 1, 1);
+        gridLayout->addWidget(btn_presantage, 4, 3, 1, 1);
 
         btn_cosa = new QPushButton(horizontalLayoutWidget);
         btn_cosa->setObjectName(QStringLiteral("btn_cosa"));
@@ -311,16 +292,20 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_cosa, 2, 1, 1, 1);
 
-        btn_cos = new QPushButton(horizontalLayoutWidget);
-        btn_cos->setObjectName(QStringLiteral("btn_cos"));
-        sizePolicy.setHeightForWidth(btn_cos->sizePolicy().hasHeightForWidth());
-        btn_cos->setSizePolicy(sizePolicy);
-        btn_cos->setFont(font);
-        btn_cos->setStyleSheet(QLatin1String("QPushButton {\n"
+        btn_1devx = new QPushButton(horizontalLayoutWidget);
+        btn_1devx->setObjectName(QStringLiteral("btn_1devx"));
+        sizePolicy.setHeightForWidth(btn_1devx->sizePolicy().hasHeightForWidth());
+        btn_1devx->setSizePolicy(sizePolicy);
+        btn_1devx->setFont(font);
+        btn_1devx->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
 "  color: white; \n"
 "  border: 1px solid gray;\n"
@@ -329,16 +314,20 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
-        gridLayout->addWidget(btn_cos, 2, 0, 1, 1);
+        gridLayout->addWidget(btn_1devx, 2, 3, 1, 1);
 
-        btn_pow3 = new QPushButton(horizontalLayoutWidget);
-        btn_pow3->setObjectName(QStringLiteral("btn_pow3"));
-        sizePolicy.setHeightForWidth(btn_pow3->sizePolicy().hasHeightForWidth());
-        btn_pow3->setSizePolicy(sizePolicy);
-        btn_pow3->setFont(font);
-        btn_pow3->setStyleSheet(QLatin1String("QPushButton {\n"
+        btn_exp = new QPushButton(horizontalLayoutWidget);
+        btn_exp->setObjectName(QStringLiteral("btn_exp"));
+        sizePolicy.setHeightForWidth(btn_exp->sizePolicy().hasHeightForWidth());
+        btn_exp->setSizePolicy(sizePolicy);
+        btn_exp->setFont(font);
+        btn_exp->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
 "  color: white; \n"
 "  border: 1px solid gray;\n"
@@ -347,9 +336,35 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
-        gridLayout->addWidget(btn_pow3, 1, 3, 1, 1);
+        gridLayout->addWidget(btn_exp, 4, 0, 1, 1);
+
+        btn_bin = new QPushButton(horizontalLayoutWidget);
+        btn_bin->setObjectName(QStringLiteral("btn_bin"));
+        sizePolicy.setHeightForWidth(btn_bin->sizePolicy().hasHeightForWidth());
+        btn_bin->setSizePolicy(sizePolicy);
+        btn_bin->setFont(font);
+        btn_bin->setStyleSheet(QLatin1String("QPushButton {\n"
+"  background-color: rgb(195, 155, 211);\n"
+"  color: white; \n"
+"  border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
+"}"));
+
+        gridLayout->addWidget(btn_bin, 2, 2, 1, 1);
 
         btn_pow = new QPushButton(horizontalLayoutWidget);
         btn_pow->setObjectName(QStringLiteral("btn_pow"));
@@ -365,9 +380,79 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_pow, 1, 2, 1, 1);
+
+        btn_pow3 = new QPushButton(horizontalLayoutWidget);
+        btn_pow3->setObjectName(QStringLiteral("btn_pow3"));
+        sizePolicy.setHeightForWidth(btn_pow3->sizePolicy().hasHeightForWidth());
+        btn_pow3->setSizePolicy(sizePolicy);
+        btn_pow3->setFont(font);
+        btn_pow3->setStyleSheet(QLatin1String("QPushButton {\n"
+"  background-color: rgb(195, 155, 211);\n"
+"  color: white; \n"
+"  border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
+"}"));
+
+        gridLayout->addWidget(btn_pow3, 1, 3, 1, 1);
+
+        btn_cos = new QPushButton(horizontalLayoutWidget);
+        btn_cos->setObjectName(QStringLiteral("btn_cos"));
+        sizePolicy.setHeightForWidth(btn_cos->sizePolicy().hasHeightForWidth());
+        btn_cos->setSizePolicy(sizePolicy);
+        btn_cos->setFont(font);
+        btn_cos->setStyleSheet(QLatin1String("QPushButton {\n"
+"  background-color: rgb(195, 155, 211);\n"
+"  color: white; \n"
+"  border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
+"}"));
+
+        gridLayout->addWidget(btn_cos, 2, 0, 1, 1);
+
+        btn_pow2 = new QPushButton(horizontalLayoutWidget);
+        btn_pow2->setObjectName(QStringLiteral("btn_pow2"));
+        sizePolicy.setHeightForWidth(btn_pow2->sizePolicy().hasHeightForWidth());
+        btn_pow2->setSizePolicy(sizePolicy);
+        btn_pow2->setFont(font);
+        btn_pow2->setStyleSheet(QLatin1String("QPushButton {\n"
+"  background-color: rgb(195, 155, 211);\n"
+"  color: white; \n"
+"  border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
+"}"));
+
+        gridLayout->addWidget(btn_pow2, 0, 3, 1, 1);
 
         btn_sina = new QPushButton(horizontalLayoutWidget);
         btn_sina->setObjectName(QStringLiteral("btn_sina"));
@@ -383,6 +468,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_sina, 1, 1, 1, 1);
@@ -401,27 +490,13 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_sin, 1, 0, 1, 1);
-
-        btn_pow2 = new QPushButton(horizontalLayoutWidget);
-        btn_pow2->setObjectName(QStringLiteral("btn_pow2"));
-        sizePolicy.setHeightForWidth(btn_pow2->sizePolicy().hasHeightForWidth());
-        btn_pow2->setSizePolicy(sizePolicy);
-        btn_pow2->setFont(font);
-        btn_pow2->setStyleSheet(QLatin1String("QPushButton {\n"
-"  background-color: rgb(195, 155, 211);\n"
-"  color: white; \n"
-"  border: 1px solid gray;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
-"}"));
-
-        gridLayout->addWidget(btn_pow2, 0, 3, 1, 1);
 
         btn_sqrt = new QPushButton(horizontalLayoutWidget);
         btn_sqrt->setObjectName(QStringLiteral("btn_sqrt"));
@@ -437,27 +512,13 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_sqrt, 0, 2, 1, 1);
-
-        btn_log = new QPushButton(horizontalLayoutWidget);
-        btn_log->setObjectName(QStringLiteral("btn_log"));
-        sizePolicy.setHeightForWidth(btn_log->sizePolicy().hasHeightForWidth());
-        btn_log->setSizePolicy(sizePolicy);
-        btn_log->setFont(font);
-        btn_log->setStyleSheet(QLatin1String("QPushButton {\n"
-"  background-color: rgb(195, 155, 211);\n"
-"  color: white; \n"
-"  border: 1px solid gray;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
-"}"));
-
-        gridLayout->addWidget(btn_log, 0, 1, 1, 1);
 
         btn_pi = new QPushButton(horizontalLayoutWidget);
         btn_pi->setObjectName(QStringLiteral("btn_pi"));
@@ -473,9 +534,35 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
 "}"));
 
         gridLayout->addWidget(btn_pi, 0, 0, 1, 1);
+
+        btn_log = new QPushButton(horizontalLayoutWidget);
+        btn_log->setObjectName(QStringLiteral("btn_log"));
+        sizePolicy.setHeightForWidth(btn_log->sizePolicy().hasHeightForWidth());
+        btn_log->setSizePolicy(sizePolicy);
+        btn_log->setFont(font);
+        btn_log->setStyleSheet(QLatin1String("QPushButton {\n"
+"  background-color: rgb(195, 155, 211);\n"
+"  color: white; \n"
+"  border: 1px solid gray;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #D7BDE2, stop: 1 #EBDEF0);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #AF7AC5;\n"
+"}"));
+
+        gridLayout->addWidget(btn_log, 0, 1, 1, 1);
 
 
         horizontalLayout_9->addLayout(gridLayout);
@@ -501,7 +588,7 @@ public:
         btn_backslash->setSizePolicy(sizePolicy);
         btn_backslash->setFont(font);
         btn_backslash->setStyleSheet(QLatin1String("QPushButton {\n"
-"  background-color: rgb(255, 151, 57);\n"
+"  background-color: rgb(243, 156, 18);\n"
 "  color: white; \n"
 "  border: 1px solid gray;\n"
 "}\n"
@@ -509,6 +596,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #FF7832, stop: 1 #FF9739);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #D68910;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_backslash, 0, 2, 1, 1);
@@ -527,6 +618,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #3498DB, stop: 1 #5DADE2);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #2874A6;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_plus_minus, 0, 3, 1, 1);
@@ -537,7 +632,7 @@ public:
         btn_clear_all->setSizePolicy(sizePolicy);
         btn_clear_all->setFont(font);
         btn_clear_all->setStyleSheet(QLatin1String("QPushButton {\n"
-"  background-color: rgb(255, 151, 57);\n"
+"  background-color: rgb(243, 156, 18);\n"
 "  color: white; \n"
 "  border: 1px solid gray;\n"
 "}\n"
@@ -545,6 +640,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #FF7832, stop: 1 #FF9739);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #D68910;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_clear_all, 0, 0, 1, 1);
@@ -555,7 +654,7 @@ public:
         btn_clear->setSizePolicy(sizePolicy);
         btn_clear->setFont(font);
         btn_clear->setStyleSheet(QLatin1String("QPushButton {\n"
-"  background-color: rgb(255, 151, 57);\n"
+"  background-color: rgb(243, 156, 18);\n"
 "  color: white; \n"
 "  border: 1px solid gray;\n"
 "}\n"
@@ -563,6 +662,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #FF7832, stop: 1 #FF9739);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #D68910;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_clear, 0, 1, 1, 1);
@@ -581,6 +684,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #3498DB, stop: 1 #5DADE2);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #2874A6;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_multiple, 4, 3, 1, 1);
@@ -599,6 +706,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #5DADE2, stop: 1 #85C1E9);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #BFC9CA;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_7, 1, 0, 1, 1);
@@ -617,6 +728,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #3498DB, stop: 1 #5DADE2);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #2874A6;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_plus, 1, 3, 1, 1);
@@ -635,6 +750,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #5DADE2, stop: 1 #85C1E9);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #BFC9CA;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_8, 1, 1, 1, 1);
@@ -653,6 +772,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #5DADE2, stop: 1 #85C1E9);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #BFC9CA;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_4, 2, 0, 1, 1);
@@ -671,6 +794,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #5DADE2, stop: 1 #85C1E9);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #BFC9CA;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_6, 2, 2, 1, 1);
@@ -689,6 +816,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #5DADE2, stop: 1 #85C1E9);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #BFC9CA;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_9, 1, 2, 1, 1);
@@ -707,6 +838,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #5DADE2, stop: 1 #85C1E9);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #BFC9CA;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_3, 3, 2, 1, 1);
@@ -725,6 +860,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #5DADE2, stop: 1 #85C1E9);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #BFC9CA;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_2, 3, 1, 1, 1);
@@ -743,6 +882,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #3498DB, stop: 1 #5DADE2);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #2874A6;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_minus, 2, 3, 1, 1);
@@ -761,6 +904,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #5DADE2, stop: 1 #85C1E9);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #BFC9CA;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_1, 3, 0, 1, 1);
@@ -779,6 +926,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #5DADE2, stop: 1 #85C1E9);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #BFC9CA;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_5, 2, 1, 1, 1);
@@ -797,6 +948,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #3498DB, stop: 1 #5DADE2);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #2874A6;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_dot, 4, 0, 1, 1);
@@ -815,6 +970,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #3498DB, stop: 1 #5DADE2);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #2874A6;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_eqal, 4, 2, 1, 1);
@@ -833,6 +992,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #5DADE2, stop: 1 #85C1E9);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #BFC9CA;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_0, 4, 1, 1, 1);
@@ -851,6 +1014,10 @@ public:
 "QPushButton:pressed {\n"
 "    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                      stop: 0 #3498DB, stop: 1 #5DADE2);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #2874A6;\n"
 "}"));
 
         gridLayout_4->addWidget(btn_devide, 3, 3, 1, 1);
@@ -882,27 +1049,111 @@ public:
         lblshowoperator->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(30, 10, 301, 31));
+        label->setGeometry(QRect(30, 10, 431, 31));
         QFont font3;
-        font3.setFamily(QStringLiteral("Papyrus"));
-        font3.setPointSize(16);
+        font3.setFamily(QStringLiteral("Rockwell Extra Bold"));
+        font3.setPointSize(18);
         font3.setBold(true);
         font3.setWeight(75);
         label->setFont(font3);
         widget_thermo = new QWidget(centralWidget);
         widget_thermo->setObjectName(QStringLiteral("widget_thermo"));
+        widget_thermo->setEnabled(true);
         widget_thermo->setGeometry(QRect(20, 140, 431, 431));
         widget_thermo->setAutoFillBackground(false);
         widget_thermo->setStyleSheet(QLatin1String("QWidget {\n"
 "  background-color: rgb(234, 236, 238);\n"
 "  \n"
 "}"));
+        radio_ctof = new QRadioButton(widget_thermo);
+        radio_ctof->setObjectName(QStringLiteral("radio_ctof"));
+        radio_ctof->setGeometry(QRect(110, 100, 221, 31));
+        radio_ctof->setFont(font);
+        radio_ftoc = new QRadioButton(widget_thermo);
+        radio_ftoc->setObjectName(QStringLiteral("radio_ftoc"));
+        radio_ftoc->setGeometry(QRect(110, 150, 221, 31));
+        radio_ftoc->setFont(font);
+        radio_ctok = new QRadioButton(widget_thermo);
+        radio_ctok->setObjectName(QStringLiteral("radio_ctok"));
+        radio_ctok->setGeometry(QRect(110, 200, 221, 31));
+        radio_ctok->setFont(font);
+        radioktoc = new QRadioButton(widget_thermo);
+        radioktoc->setObjectName(QStringLiteral("radioktoc"));
+        radioktoc->setGeometry(QRect(110, 250, 221, 31));
+        radioktoc->setFont(font);
+        label_2 = new QLabel(widget_thermo);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(30, 30, 331, 41));
+        QFont font4;
+        font4.setPointSize(14);
+        font4.setBold(true);
+        font4.setWeight(75);
+        label_2->setFont(font4);
+        btn_converte = new QPushButton(widget_thermo);
+        btn_converte->setObjectName(QStringLiteral("btn_converte"));
+        btn_converte->setGeometry(QRect(110, 320, 191, 41));
+        QFont font5;
+        font5.setPointSize(12);
+        font5.setBold(false);
+        font5.setWeight(50);
+        btn_converte->setFont(font5);
+        btn_converte->setStyleSheet(QLatin1String("QPushButton {\n"
+"  background-color: rgb(243, 156, 18);\n"
+"  color: white; \n"
+"  border: 1px solid gray;\n"
+"  border-radius: 20px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #FF7832, stop: 1 #FF9739);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #D68910;\n"
+"}"));
         btn_g_thermo = new QPushButton(centralWidget);
         btn_g_thermo->setObjectName(QStringLiteral("btn_g_thermo"));
-        btn_g_thermo->setGeometry(QRect(780, 10, 93, 28));
+        btn_g_thermo->setGeometry(QRect(730, 10, 131, 28));
+        QFont font6;
+        font6.setPointSize(10);
+        font6.setBold(false);
+        font6.setWeight(50);
+        btn_g_thermo->setFont(font6);
+        btn_g_thermo->setStyleSheet(QLatin1String("QPushButton {\n"
+"  background-color:#4CC417;\n"
+"  color: white; \n"
+"  border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #3498DB, stop: 1 #5DADE2);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #52D017;\n"
+"}"));
         btn_go_cal = new QPushButton(centralWidget);
         btn_go_cal->setObjectName(QStringLiteral("btn_go_cal"));
-        btn_go_cal->setGeometry(QRect(680, 10, 93, 28));
+        btn_go_cal->setGeometry(QRect(592, 10, 131, 28));
+        btn_go_cal->setFont(font6);
+        btn_go_cal->setStyleSheet(QLatin1String("QPushButton {\n"
+"  background-color:#4CC417;\n"
+"  color: white; \n"
+"  border: 1px solid gray;\n"
+" border-radius: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #3498DB, stop: 1 #5DADE2);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"     background-color: #52D017;\n"
+"}"));
         Calculator->setCentralWidget(centralWidget);
 
         retranslateUi(Calculator);
@@ -913,26 +1164,26 @@ public:
     void retranslateUi(QMainWindow *Calculator)
     {
         Calculator->setWindowTitle(QApplication::translate("Calculator", "Calculator", Q_NULLPTR));
-        btn_tana->setText(QApplication::translate("Calculator", "Tan A", Q_NULLPTR));
         btn_lnx->setText(QApplication::translate("Calculator", "Ln x", Q_NULLPTR));
         btn_oct->setText(QApplication::translate("Calculator", "Oct", Q_NULLPTR));
         btn_tan->setText(QApplication::translate("Calculator", "Tan", Q_NULLPTR));
-        btn_presantage->setText(QApplication::translate("Calculator", "%", Q_NULLPTR));
+        btn_tana->setText(QApplication::translate("Calculator", "Tan A", Q_NULLPTR));
         btn_hex->setText(QApplication::translate("Calculator", "Hex", Q_NULLPTR));
         btn_mod->setText(QApplication::translate("Calculator", "Mod", Q_NULLPTR));
-        btn_exp->setText(QApplication::translate("Calculator", "Exp", Q_NULLPTR));
-        btn_1devx->setText(QApplication::translate("Calculator", "1/x", Q_NULLPTR));
-        btn_bin->setText(QApplication::translate("Calculator", "Bin", Q_NULLPTR));
+        btn_presantage->setText(QApplication::translate("Calculator", "%", Q_NULLPTR));
         btn_cosa->setText(QApplication::translate("Calculator", "Cos A", Q_NULLPTR));
-        btn_cos->setText(QApplication::translate("Calculator", "Cos", Q_NULLPTR));
-        btn_pow3->setText(QApplication::translate("Calculator", "X^3", Q_NULLPTR));
+        btn_1devx->setText(QApplication::translate("Calculator", "1/x", Q_NULLPTR));
+        btn_exp->setText(QApplication::translate("Calculator", "Exp", Q_NULLPTR));
+        btn_bin->setText(QApplication::translate("Calculator", "Bin", Q_NULLPTR));
         btn_pow->setText(QApplication::translate("Calculator", "Pow", Q_NULLPTR));
+        btn_pow3->setText(QApplication::translate("Calculator", "X^3", Q_NULLPTR));
+        btn_cos->setText(QApplication::translate("Calculator", "Cos", Q_NULLPTR));
+        btn_pow2->setText(QApplication::translate("Calculator", "X^2", Q_NULLPTR));
         btn_sina->setText(QApplication::translate("Calculator", "Sin A", Q_NULLPTR));
         btn_sin->setText(QApplication::translate("Calculator", "Sin", Q_NULLPTR));
-        btn_pow2->setText(QApplication::translate("Calculator", "X^2", Q_NULLPTR));
         btn_sqrt->setText(QApplication::translate("Calculator", "Sqrt", Q_NULLPTR));
-        btn_log->setText(QApplication::translate("Calculator", "Log", Q_NULLPTR));
         btn_pi->setText(QApplication::translate("Calculator", "\317\200", Q_NULLPTR));
+        btn_log->setText(QApplication::translate("Calculator", "Log", Q_NULLPTR));
         btn_backslash->setText(QApplication::translate("Calculator", "<==", Q_NULLPTR));
         btn_plus_minus->setText(QApplication::translate("Calculator", "\302\261", Q_NULLPTR));
         btn_clear_all->setText(QApplication::translate("Calculator", "CE", Q_NULLPTR));
@@ -956,6 +1207,12 @@ public:
         textDisplay->setPlaceholderText(QApplication::translate("Calculator", "0", Q_NULLPTR));
         lblshowoperator->setText(QString());
         label->setText(QApplication::translate("Calculator", "Sciencetific Calculator", Q_NULLPTR));
+        radio_ctof->setText(QApplication::translate("Calculator", "Celsius to Fahrenheit", Q_NULLPTR));
+        radio_ftoc->setText(QApplication::translate("Calculator", "Fahrenheit to Celsius", Q_NULLPTR));
+        radio_ctok->setText(QApplication::translate("Calculator", "Celsius to Kelvin", Q_NULLPTR));
+        radioktoc->setText(QApplication::translate("Calculator", "Kelvin to Celsius", Q_NULLPTR));
+        label_2->setText(QApplication::translate("Calculator", "Temperature Converter", Q_NULLPTR));
+        btn_converte->setText(QApplication::translate("Calculator", "Convert", Q_NULLPTR));
         btn_g_thermo->setText(QApplication::translate("Calculator", "Thermo Cal", Q_NULLPTR));
         btn_go_cal->setText(QApplication::translate("Calculator", "Science Cal", Q_NULLPTR));
     } // retranslateUi

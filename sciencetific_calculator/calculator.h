@@ -70,6 +70,16 @@ private slots:
 
     void on_btn_g_thermo_clicked();
 
+    void on_radio_ctof_clicked();
+
+    void on_radio_ftoc_clicked();
+
+    void on_radio_ctok_clicked();
+
+    void on_radioktoc_clicked();
+
+    void on_btn_converte_clicked();
+
 private:
     Ui::Calculator *ui;
 };
