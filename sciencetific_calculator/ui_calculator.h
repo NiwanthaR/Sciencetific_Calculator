@@ -95,6 +95,9 @@ public:
         if (Calculator->objectName().isEmpty())
             Calculator->setObjectName(QStringLiteral("Calculator"));
         Calculator->resize(901, 588);
+        QIcon icon;
+        icon.addFile(QStringLiteral("../../../../Downloads/calculator.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Calculator->setWindowIcon(icon);
         Calculator->setStyleSheet(QLatin1String("QMainWindow {\n"
 "  background-color: rgb(234, 236, 238);\n"
 "  border: 1px solid gray;\n"
