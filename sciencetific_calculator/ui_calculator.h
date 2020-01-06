@@ -1047,7 +1047,7 @@ public:
         lblshowoperator->setObjectName(QStringLiteral("lblshowoperator"));
         lblshowoperator->setGeometry(QRect(30, 60, 841, 31));
         QFont font2;
-        font2.setPointSize(9);
+        font2.setPointSize(10);
         lblshowoperator->setFont(font2);
         lblshowoperator->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         label = new QLabel(centralWidget);

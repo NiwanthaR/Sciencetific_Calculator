@@ -22,6 +22,8 @@ private slots:
 
     void digite_press();
 
+    bool is_it_empty();
+
     void Arithmatic_Operator();
 
     void on_btn_dot_clicked();

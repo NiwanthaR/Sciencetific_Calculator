@@ -75,7 +75,19 @@ void Calculator:: digite_press()
     {
         ui->textDisplay->setText(button->text());
     }else{
-        ui->textDisplay->setText( ui->textDisplay->text() + button->text());
+        if(ui->textDisplay->text()=="0")
+        {
+            if(button->text()=="0")
+            {
+
+            }else
+            {
+                ui->textDisplay->setText( ui->textDisplay->text() + button->text());
+            }
+        }else{
+            ui->textDisplay->setText( ui->textDisplay->text() + button->text());
+        }
+        //ui->textDisplay->setText( ui->textDisplay->text() + button->text());
     }
 }
 
@@ -145,21 +157,25 @@ void Calculator::on_btn_eqal_clicked()
 
     }else if(IOoperator == "Mod")
     {
-        //find mod
-        int ifirst,isecond,iresult;
-        ifirst = (int)iFirstnum;
-        isecond = (int)iSecondnum;
-        iresult = ifirst % isecond;
-        ui->textDisplay->setText(QString::number(iresult,'g',15));
-        ui->lblshowoperator->setText(ui->lblshowoperator->text()+" "+QString::number(iSecondnum,'g',15));
+
+           //find mod
+           int ifirst,isecond,iresult;
+           ifirst = (int)iFirstnum;
+           isecond = (int)iSecondnum;
+           iresult = ifirst % isecond;
+           ui->textDisplay->setText(QString::number(iresult,'g',15));
+           ui->lblshowoperator->setText(ui->lblshowoperator->text()+" "+QString::number(iSecondnum,'g',15));
+
 
     }else if(IOoperator == "Exp")
     {
-        // find exp
-        iResult = (iFirstnum,(1/iSecondnum));
-        iResult = qExp(iResult);
-        ui->textDisplay->setText(QString::number(iResult,'g',15));
-        ui->lblshowoperator->setText(ui->lblshowoperator->text()+" "+QString::number(iSecondnum,'g',15));
+
+           // find exp
+           iResult = (iFirstnum,(1/iSecondnum));
+           iResult = qExp(iResult);
+           ui->textDisplay->setText(QString::number(iResult,'g',15));
+           ui->lblshowoperator->setText(ui->lblshowoperator->text()+" "+QString::number(iSecondnum,'g',15));
+
 
     }else if(IOoperator == "%")
     {
@@ -199,142 +215,193 @@ void Calculator::on_btn_pi_clicked()
 
 void Calculator::on_btn_log_clicked()
 {
-    // Find log value of enter value
-    int log = ui->textDisplay->text().toInt();
-    ui->lblshowoperator->setText("Log (" +(ui->textDisplay->text()) + ")");
-    log = qLn(log);
-    ui->textDisplay->setText(QString::number(log));
+    if(is_it_empty())
+    {
+        // Find log value of enter value
+        int logs = ui->textDisplay->text().toInt();
+        ui->lblshowoperator->setText("Log (" +(ui->textDisplay->text()) + ")");
+        logs = log(logs);
+        ui->textDisplay->setText(QString::number(logs));
+    }
 }
 
 void Calculator::on_btn_sqrt_clicked()
 {
-    // Find sqrt of enter value
-    int sqrt = ui->textDisplay->text().toInt();
-    ui->lblshowoperator->setText("Sqrt (" +(ui->textDisplay->text()) + ")");
-    sqrt = qSqrt(sqrt);
-    ui->textDisplay->setText(QString::number(sqrt));
+    if(is_it_empty())
+    {
+        // Find sqrt of enter value
+        int sqrt = ui->textDisplay->text().toInt();
+        ui->lblshowoperator->setText("Sqrt (" +(ui->textDisplay->text()) + ")");
+        sqrt = qSqrt(sqrt);
+        ui->textDisplay->setText(QString::number(sqrt));
+    }
 }
 
 void Calculator::on_btn_sina_clicked()
 {
-    // Find anty sin value in enter value
-    double sinh = ui->textDisplay->text().toDouble();
-    ui->lblshowoperator->setText("Sin A (" +(ui->textDisplay->text()) + ")");
-    sinh = qAsin(sinh);
-    ui->textDisplay->setText(QString::number(sinh));
+    if(is_it_empty())
+    {
+        // Find anty sin value in enter value
+        double sinh = ui->textDisplay->text().toDouble();
+        ui->lblshowoperator->setText("Sin A (" +(ui->textDisplay->text()) + ")");
+        sinh = qAsin(sinh);
+        ui->textDisplay->setText(QString::number(sinh));
+    }
 }
 
 void Calculator::on_btn_cosa_clicked()
 {
-    // Find anty cos value in enter value
-    double cosh = ui->textDisplay->text().toDouble();
-    ui->lblshowoperator->setText("Cos A (" +(ui->textDisplay->text()) + ")");
-    cosh = cos(cosh);
-    ui->textDisplay->setText(QString::number(cosh));
+    if(is_it_empty())
+    {
+        // Find anty cos value in enter value
+        double cosh = ui->textDisplay->text().toDouble();
+        ui->lblshowoperator->setText("Cos A (" +(ui->textDisplay->text()) + ")");
+        cosh = cos(cosh);
+        ui->textDisplay->setText(QString::number(cosh));
+    }
 }
 
 void Calculator::on_btn_tana_clicked()
 {
-    // Find anty tan value in enter value
-    double tanh = ui->textDisplay->text().toDouble();
-    ui->lblshowoperator->setText("Tan A (" +(ui->textDisplay->text()) + ")");
-    tanh = qAtan(tanh);
-    ui->textDisplay->setText(QString::number(tanh));
+    if(is_it_empty())
+    {
+        // Find anty tan value in enter value
+        double tanh = ui->textDisplay->text().toDouble();
+        ui->lblshowoperator->setText("Tan A (" +(ui->textDisplay->text()) + ")");
+        tanh = qAtan(tanh);
+        ui->textDisplay->setText(QString::number(tanh));
+    }
 }
 
 void Calculator::on_btn_sin_clicked()
 {
-    // Find sin value of enter value
-    double sin = ui->textDisplay->text().toDouble();
-    ui->lblshowoperator->setText("Sin (" +(ui->textDisplay->text()) + ")");
-    sin = qSin(sin);
-    ui->textDisplay->setText(QString::number(sin));
+   if(is_it_empty())
+   {
+       // Find sin value of enter value
+       double sin = ui->textDisplay->text().toDouble();
+       ui->lblshowoperator->setText("Sin (" +(ui->textDisplay->text()) + ")");
+       sin = qSin(sin);
+       ui->textDisplay->setText(QString::number(sin));
+   }
 }
 
 void Calculator::on_btn_cos_clicked()
 {
-    // Find cos value of enter value
-    double cos = ui->textDisplay->text().toDouble();
-    ui->lblshowoperator->setText("Cos (" +(ui->textDisplay->text()) + ")");
-    cos = qCos(cos);
-    ui->textDisplay->setText(QString::number(cos));
+    if(is_it_empty())
+    {
+        // Find cos value of enter value
+        double cos = ui->textDisplay->text().toDouble();
+        ui->lblshowoperator->setText("Cos (" +(ui->textDisplay->text()) + ")");
+        cos = qCos(cos);
+        ui->textDisplay->setText(QString::number(cos));
+    }
 }
 
 void Calculator::on_btn_tan_clicked()
 {
-    // Finad tan value of enter value
-    double tan = ui->textDisplay->text().toDouble();
-    ui->lblshowoperator->setText("Tan A (" +(ui->textDisplay->text()) + ")");
-    tan = qTan(tan);
-    ui->textDisplay->setText(QString::number(tan));
+    if(is_it_empty())
+    {
+        // Finad tan value of enter value
+        double tan = ui->textDisplay->text().toDouble();
+        ui->lblshowoperator->setText("Tan A (" +(ui->textDisplay->text()) + ")");
+        tan = qTan(tan);
+        ui->textDisplay->setText(QString::number(tan));
+    }
 }
 
 void Calculator::on_btn_bin_clicked()
 {
-    // convert to binnary format
-    QString a = ui->textDisplay->text();
-    ui->lblshowoperator->setText("Binary Value of (" +(ui->textDisplay->text()) + ")");
-    bool ok;
-    ui->textDisplay->setText( QString::number(a.toLongLong(&ok, 10),2));
+   if(is_it_empty())
+   {
+       // convert to binnary format
+       QString a = ui->textDisplay->text();
+       ui->lblshowoperator->setText("Binary Value of (" +(ui->textDisplay->text()) + ")");
+       bool ok;
+       ui->textDisplay->setText( QString::number(a.toLongLong(&ok, 10),2));
+   }
 }
 
 void Calculator::on_btn_oct_clicked()
 {
-    // convert octa decimal format
-    QString a = ui->textDisplay->text();
-    ui->lblshowoperator->setText("Binary Value of (" +(ui->textDisplay->text()) + ")");
-    bool ok;
-    ui->textDisplay->setText( QString::number(a.toLongLong(&ok, 10),8));
+    if(is_it_empty())
+    {
+        // convert octa decimal format
+        QString a = ui->textDisplay->text();
+        ui->lblshowoperator->setText("Octal Value of (" +(ui->textDisplay->text()) + ")");
+        bool ok;
+        ui->textDisplay->setText( QString::number(a.toLongLong(&ok, 10),8));
+    }
 }
 
 void Calculator::on_btn_hex_clicked()
 {
-    // convert hexa decimal format
-    QString a = ui->textDisplay->text();
-    ui->lblshowoperator->setText("Hexadecimal Value of (" +(ui->textDisplay->text()) + ")");
-    bool ok;
-    ui->textDisplay->setText( QString::number(a.toLongLong(&ok, 10),16));
+   if(is_it_empty())
+   {
+       // convert hexa decimal format
+       QString a = ui->textDisplay->text();
+       ui->lblshowoperator->setText("Hexadecimal Value of (" +(ui->textDisplay->text()) + ")");
+       bool ok;
+       ui->textDisplay->setText( QString::number(a.toLongLong(&ok, 10),16));
+   }
 }
 
 void Calculator::on_btn_pow2_clicked()
 {
-    // power of x*2 of enter value
-    double x = ui->textDisplay->text().toDouble();
-    x = x*x;
-    ui->lblshowoperator->setText("x^2 of ( " +(ui->textDisplay->text()) + " )");
-    ui->textDisplay->setText(QString::number(x));
+   if(is_it_empty())
+   {
+       // power of x*2 of enter value
+       double x = ui->textDisplay->text().toDouble();
+       x = x*x;
+       ui->lblshowoperator->setText("x^2 of ( " +(ui->textDisplay->text()) + " )");
+       ui->textDisplay->setText(QString::number(x));
+   }
 }
 
 void Calculator::on_btn_pow3_clicked()
 {
-    // power of x*3 of enter value
-    double x = ui->textDisplay->text().toDouble();
-    x = x*x*x;
-    ui->lblshowoperator->setText("x^3 of ( " +(ui->textDisplay->text()) + " )");
-    ui->textDisplay->setText(QString::number(x));
+    if(is_it_empty())
+    {
+        // power of x*3 of enter value
+        double x = ui->textDisplay->text().toDouble();
+        x = x*x*x;
+        ui->lblshowoperator->setText("x^3 of ( " +(ui->textDisplay->text()) + " )");
+        ui->textDisplay->setText(QString::number(x));
+    }
 }
 
 void Calculator::on_btn_1devx_clicked()
 {
-    //1/x value of enter value
-    double x = ui->textDisplay->text().toDouble();
-    x=1/x;
-    ui->lblshowoperator->setText("1/x of ( " +(ui->textDisplay->text()) + " )");
-    ui->textDisplay->setText(QString::number(x));
+    if(is_it_empty())
+    {
+        //1/x value of enter value
+        double x = ui->textDisplay->text().toDouble();
+        x=1/x;
+        ui->lblshowoperator->setText("1/x of ( " +(ui->textDisplay->text()) + " )");
+        ui->textDisplay->setText(QString::number(x));
+    }
 }
 
 void Calculator::on_btn_lnx_clicked()
 {
-    //log 10 to power btn click
-    double log = ui->textDisplay->text().toDouble();
-    ui->lblshowoperator->setText("Log (" +(ui->textDisplay->text()) + ")");
-    log = log10(log);
-    ui->textDisplay->setText(QString::number(log));
+    if(is_it_empty())
+    {
+        //log 10 to power btn click
+        double log = ui->textDisplay->text().toDouble();
+        ui->lblshowoperator->setText("Log (" +(ui->textDisplay->text()) + ")");
+        log = log10(log);
+        ui->textDisplay->setText(QString::number(log));
+    }
 }
 
 void Calculator::on_btn_go_cal_clicked()
 {
     ui->widget_thermo->setVisible(false);
+
+    ui->btn_plus->setEnabled(true);
+    ui->btn_minus->setEnabled(true);
+    ui->btn_devide->setEnabled(true);
+    ui->btn_multiple->setEnabled(true);
+    ui->btn_eqal->setEnabled(true);
 }
 
 void Calculator::on_btn_g_thermo_clicked()
@@ -393,10 +460,22 @@ void Calculator::on_btn_converte_clicked()
 
     }else if(choise == 4)
         {
-            double far = ui->textDisplay->text().toDouble();
-            double kel = (((far-32)*5)/9)+273.15;
-            ui->textDisplay->setText(QString::number(kel)+" c");
-            ui->lblshowoperator->setText(QString::number(far)+" K Convert to Celsius ");
+            double kel = ui->textDisplay->text().toDouble();
+            double cle = (kel-273.15);
+            ui->textDisplay->setText(QString::number(cle)+" c");
+            ui->lblshowoperator->setText(QString::number(kel)+" K Convert to Celsius ");
 
         }
+}
+
+//this function used to check textDisplay is empty or not
+bool Calculator::is_it_empty()
+{
+    if(ui->textDisplay->text()== 0)
+    {
+        ui->lblshowoperator->setText("Please input Value First");
+        return false;
+    }else{
+        return true;
+    }
 }
