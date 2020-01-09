@@ -95,6 +95,11 @@ public:
         if (Calculator->objectName().isEmpty())
             Calculator->setObjectName(QStringLiteral("Calculator"));
         Calculator->resize(901, 588);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(Calculator->sizePolicy().hasHeightForWidth());
+        Calculator->setSizePolicy(sizePolicy);
         QIcon icon;
         icon.addFile(QStringLiteral("../../../../Downloads/calculator.png"), QSize(), QIcon::Normal, QIcon::Off);
         Calculator->setWindowIcon(icon);
@@ -124,11 +129,11 @@ public:
         gridLayout->setContentsMargins(0, -1, -1, -1);
         btn_lnx = new QPushButton(horizontalLayoutWidget);
         btn_lnx->setObjectName(QStringLiteral("btn_lnx"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(btn_lnx->sizePolicy().hasHeightForWidth());
-        btn_lnx->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(btn_lnx->sizePolicy().hasHeightForWidth());
+        btn_lnx->setSizePolicy(sizePolicy1);
         QFont font;
         font.setPointSize(12);
         btn_lnx->setFont(font);
@@ -151,8 +156,8 @@ public:
 
         btn_oct = new QPushButton(horizontalLayoutWidget);
         btn_oct->setObjectName(QStringLiteral("btn_oct"));
-        sizePolicy.setHeightForWidth(btn_oct->sizePolicy().hasHeightForWidth());
-        btn_oct->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_oct->sizePolicy().hasHeightForWidth());
+        btn_oct->setSizePolicy(sizePolicy1);
         btn_oct->setFont(font);
         btn_oct->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -173,8 +178,8 @@ public:
 
         btn_tan = new QPushButton(horizontalLayoutWidget);
         btn_tan->setObjectName(QStringLiteral("btn_tan"));
-        sizePolicy.setHeightForWidth(btn_tan->sizePolicy().hasHeightForWidth());
-        btn_tan->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_tan->sizePolicy().hasHeightForWidth());
+        btn_tan->setSizePolicy(sizePolicy1);
         btn_tan->setFont(font);
         btn_tan->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -195,8 +200,8 @@ public:
 
         btn_tana = new QPushButton(horizontalLayoutWidget);
         btn_tana->setObjectName(QStringLiteral("btn_tana"));
-        sizePolicy.setHeightForWidth(btn_tana->sizePolicy().hasHeightForWidth());
-        btn_tana->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_tana->sizePolicy().hasHeightForWidth());
+        btn_tana->setSizePolicy(sizePolicy1);
         btn_tana->setFont(font);
         btn_tana->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -217,8 +222,8 @@ public:
 
         btn_hex = new QPushButton(horizontalLayoutWidget);
         btn_hex->setObjectName(QStringLiteral("btn_hex"));
-        sizePolicy.setHeightForWidth(btn_hex->sizePolicy().hasHeightForWidth());
-        btn_hex->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_hex->sizePolicy().hasHeightForWidth());
+        btn_hex->setSizePolicy(sizePolicy1);
         btn_hex->setFont(font);
         btn_hex->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -239,8 +244,8 @@ public:
 
         btn_mod = new QPushButton(horizontalLayoutWidget);
         btn_mod->setObjectName(QStringLiteral("btn_mod"));
-        sizePolicy.setHeightForWidth(btn_mod->sizePolicy().hasHeightForWidth());
-        btn_mod->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_mod->sizePolicy().hasHeightForWidth());
+        btn_mod->setSizePolicy(sizePolicy1);
         btn_mod->setFont(font);
         btn_mod->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -261,8 +266,8 @@ public:
 
         btn_presantage = new QPushButton(horizontalLayoutWidget);
         btn_presantage->setObjectName(QStringLiteral("btn_presantage"));
-        sizePolicy.setHeightForWidth(btn_presantage->sizePolicy().hasHeightForWidth());
-        btn_presantage->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_presantage->sizePolicy().hasHeightForWidth());
+        btn_presantage->setSizePolicy(sizePolicy1);
         btn_presantage->setFont(font);
         btn_presantage->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -283,8 +288,8 @@ public:
 
         btn_cosa = new QPushButton(horizontalLayoutWidget);
         btn_cosa->setObjectName(QStringLiteral("btn_cosa"));
-        sizePolicy.setHeightForWidth(btn_cosa->sizePolicy().hasHeightForWidth());
-        btn_cosa->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_cosa->sizePolicy().hasHeightForWidth());
+        btn_cosa->setSizePolicy(sizePolicy1);
         btn_cosa->setFont(font);
         btn_cosa->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -305,8 +310,8 @@ public:
 
         btn_1devx = new QPushButton(horizontalLayoutWidget);
         btn_1devx->setObjectName(QStringLiteral("btn_1devx"));
-        sizePolicy.setHeightForWidth(btn_1devx->sizePolicy().hasHeightForWidth());
-        btn_1devx->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_1devx->sizePolicy().hasHeightForWidth());
+        btn_1devx->setSizePolicy(sizePolicy1);
         btn_1devx->setFont(font);
         btn_1devx->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -327,8 +332,8 @@ public:
 
         btn_exp = new QPushButton(horizontalLayoutWidget);
         btn_exp->setObjectName(QStringLiteral("btn_exp"));
-        sizePolicy.setHeightForWidth(btn_exp->sizePolicy().hasHeightForWidth());
-        btn_exp->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_exp->sizePolicy().hasHeightForWidth());
+        btn_exp->setSizePolicy(sizePolicy1);
         btn_exp->setFont(font);
         btn_exp->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -349,8 +354,8 @@ public:
 
         btn_bin = new QPushButton(horizontalLayoutWidget);
         btn_bin->setObjectName(QStringLiteral("btn_bin"));
-        sizePolicy.setHeightForWidth(btn_bin->sizePolicy().hasHeightForWidth());
-        btn_bin->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_bin->sizePolicy().hasHeightForWidth());
+        btn_bin->setSizePolicy(sizePolicy1);
         btn_bin->setFont(font);
         btn_bin->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -371,8 +376,8 @@ public:
 
         btn_pow = new QPushButton(horizontalLayoutWidget);
         btn_pow->setObjectName(QStringLiteral("btn_pow"));
-        sizePolicy.setHeightForWidth(btn_pow->sizePolicy().hasHeightForWidth());
-        btn_pow->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_pow->sizePolicy().hasHeightForWidth());
+        btn_pow->setSizePolicy(sizePolicy1);
         btn_pow->setFont(font);
         btn_pow->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -393,8 +398,8 @@ public:
 
         btn_pow3 = new QPushButton(horizontalLayoutWidget);
         btn_pow3->setObjectName(QStringLiteral("btn_pow3"));
-        sizePolicy.setHeightForWidth(btn_pow3->sizePolicy().hasHeightForWidth());
-        btn_pow3->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_pow3->sizePolicy().hasHeightForWidth());
+        btn_pow3->setSizePolicy(sizePolicy1);
         btn_pow3->setFont(font);
         btn_pow3->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -415,8 +420,8 @@ public:
 
         btn_cos = new QPushButton(horizontalLayoutWidget);
         btn_cos->setObjectName(QStringLiteral("btn_cos"));
-        sizePolicy.setHeightForWidth(btn_cos->sizePolicy().hasHeightForWidth());
-        btn_cos->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_cos->sizePolicy().hasHeightForWidth());
+        btn_cos->setSizePolicy(sizePolicy1);
         btn_cos->setFont(font);
         btn_cos->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -437,8 +442,8 @@ public:
 
         btn_pow2 = new QPushButton(horizontalLayoutWidget);
         btn_pow2->setObjectName(QStringLiteral("btn_pow2"));
-        sizePolicy.setHeightForWidth(btn_pow2->sizePolicy().hasHeightForWidth());
-        btn_pow2->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_pow2->sizePolicy().hasHeightForWidth());
+        btn_pow2->setSizePolicy(sizePolicy1);
         btn_pow2->setFont(font);
         btn_pow2->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -459,8 +464,8 @@ public:
 
         btn_sina = new QPushButton(horizontalLayoutWidget);
         btn_sina->setObjectName(QStringLiteral("btn_sina"));
-        sizePolicy.setHeightForWidth(btn_sina->sizePolicy().hasHeightForWidth());
-        btn_sina->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_sina->sizePolicy().hasHeightForWidth());
+        btn_sina->setSizePolicy(sizePolicy1);
         btn_sina->setFont(font);
         btn_sina->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -481,8 +486,8 @@ public:
 
         btn_sin = new QPushButton(horizontalLayoutWidget);
         btn_sin->setObjectName(QStringLiteral("btn_sin"));
-        sizePolicy.setHeightForWidth(btn_sin->sizePolicy().hasHeightForWidth());
-        btn_sin->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_sin->sizePolicy().hasHeightForWidth());
+        btn_sin->setSizePolicy(sizePolicy1);
         btn_sin->setFont(font);
         btn_sin->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -503,8 +508,8 @@ public:
 
         btn_sqrt = new QPushButton(horizontalLayoutWidget);
         btn_sqrt->setObjectName(QStringLiteral("btn_sqrt"));
-        sizePolicy.setHeightForWidth(btn_sqrt->sizePolicy().hasHeightForWidth());
-        btn_sqrt->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_sqrt->sizePolicy().hasHeightForWidth());
+        btn_sqrt->setSizePolicy(sizePolicy1);
         btn_sqrt->setFont(font);
         btn_sqrt->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -525,8 +530,8 @@ public:
 
         btn_pi = new QPushButton(horizontalLayoutWidget);
         btn_pi->setObjectName(QStringLiteral("btn_pi"));
-        sizePolicy.setHeightForWidth(btn_pi->sizePolicy().hasHeightForWidth());
-        btn_pi->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_pi->sizePolicy().hasHeightForWidth());
+        btn_pi->setSizePolicy(sizePolicy1);
         btn_pi->setFont(font);
         btn_pi->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -547,8 +552,8 @@ public:
 
         btn_log = new QPushButton(horizontalLayoutWidget);
         btn_log->setObjectName(QStringLiteral("btn_log"));
-        sizePolicy.setHeightForWidth(btn_log->sizePolicy().hasHeightForWidth());
-        btn_log->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_log->sizePolicy().hasHeightForWidth());
+        btn_log->setSizePolicy(sizePolicy1);
         btn_log->setFont(font);
         btn_log->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(195, 155, 211);\n"
@@ -587,8 +592,8 @@ public:
         gridLayout_4->setContentsMargins(0, -1, -1, -1);
         btn_backslash = new QPushButton(horizontalLayoutWidget);
         btn_backslash->setObjectName(QStringLiteral("btn_backslash"));
-        sizePolicy.setHeightForWidth(btn_backslash->sizePolicy().hasHeightForWidth());
-        btn_backslash->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_backslash->sizePolicy().hasHeightForWidth());
+        btn_backslash->setSizePolicy(sizePolicy1);
         btn_backslash->setFont(font);
         btn_backslash->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(243, 156, 18);\n"
@@ -609,8 +614,8 @@ public:
 
         btn_plus_minus = new QPushButton(horizontalLayoutWidget);
         btn_plus_minus->setObjectName(QStringLiteral("btn_plus_minus"));
-        sizePolicy.setHeightForWidth(btn_plus_minus->sizePolicy().hasHeightForWidth());
-        btn_plus_minus->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_plus_minus->sizePolicy().hasHeightForWidth());
+        btn_plus_minus->setSizePolicy(sizePolicy1);
         btn_plus_minus->setFont(font);
         btn_plus_minus->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(46, 134, 193);\n"
@@ -631,8 +636,8 @@ public:
 
         btn_clear_all = new QPushButton(horizontalLayoutWidget);
         btn_clear_all->setObjectName(QStringLiteral("btn_clear_all"));
-        sizePolicy.setHeightForWidth(btn_clear_all->sizePolicy().hasHeightForWidth());
-        btn_clear_all->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_clear_all->sizePolicy().hasHeightForWidth());
+        btn_clear_all->setSizePolicy(sizePolicy1);
         btn_clear_all->setFont(font);
         btn_clear_all->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(243, 156, 18);\n"
@@ -653,8 +658,8 @@ public:
 
         btn_clear = new QPushButton(horizontalLayoutWidget);
         btn_clear->setObjectName(QStringLiteral("btn_clear"));
-        sizePolicy.setHeightForWidth(btn_clear->sizePolicy().hasHeightForWidth());
-        btn_clear->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_clear->sizePolicy().hasHeightForWidth());
+        btn_clear->setSizePolicy(sizePolicy1);
         btn_clear->setFont(font);
         btn_clear->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(243, 156, 18);\n"
@@ -675,8 +680,8 @@ public:
 
         btn_multiple = new QPushButton(horizontalLayoutWidget);
         btn_multiple->setObjectName(QStringLiteral("btn_multiple"));
-        sizePolicy.setHeightForWidth(btn_multiple->sizePolicy().hasHeightForWidth());
-        btn_multiple->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_multiple->sizePolicy().hasHeightForWidth());
+        btn_multiple->setSizePolicy(sizePolicy1);
         btn_multiple->setFont(font);
         btn_multiple->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(46, 134, 193);\n"
@@ -697,8 +702,8 @@ public:
 
         btn_7 = new QPushButton(horizontalLayoutWidget);
         btn_7->setObjectName(QStringLiteral("btn_7"));
-        sizePolicy.setHeightForWidth(btn_7->sizePolicy().hasHeightForWidth());
-        btn_7->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_7->sizePolicy().hasHeightForWidth());
+        btn_7->setSizePolicy(sizePolicy1);
         btn_7->setFont(font);
         btn_7->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(213, 219, 219);\n"
@@ -719,8 +724,8 @@ public:
 
         btn_plus = new QPushButton(horizontalLayoutWidget);
         btn_plus->setObjectName(QStringLiteral("btn_plus"));
-        sizePolicy.setHeightForWidth(btn_plus->sizePolicy().hasHeightForWidth());
-        btn_plus->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_plus->sizePolicy().hasHeightForWidth());
+        btn_plus->setSizePolicy(sizePolicy1);
         btn_plus->setFont(font);
         btn_plus->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(46, 134, 193);\n"
@@ -741,8 +746,8 @@ public:
 
         btn_8 = new QPushButton(horizontalLayoutWidget);
         btn_8->setObjectName(QStringLiteral("btn_8"));
-        sizePolicy.setHeightForWidth(btn_8->sizePolicy().hasHeightForWidth());
-        btn_8->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_8->sizePolicy().hasHeightForWidth());
+        btn_8->setSizePolicy(sizePolicy1);
         btn_8->setFont(font);
         btn_8->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(213, 219, 219);\n"
@@ -763,8 +768,8 @@ public:
 
         btn_4 = new QPushButton(horizontalLayoutWidget);
         btn_4->setObjectName(QStringLiteral("btn_4"));
-        sizePolicy.setHeightForWidth(btn_4->sizePolicy().hasHeightForWidth());
-        btn_4->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_4->sizePolicy().hasHeightForWidth());
+        btn_4->setSizePolicy(sizePolicy1);
         btn_4->setFont(font);
         btn_4->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(213, 219, 219);\n"
@@ -785,8 +790,8 @@ public:
 
         btn_6 = new QPushButton(horizontalLayoutWidget);
         btn_6->setObjectName(QStringLiteral("btn_6"));
-        sizePolicy.setHeightForWidth(btn_6->sizePolicy().hasHeightForWidth());
-        btn_6->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_6->sizePolicy().hasHeightForWidth());
+        btn_6->setSizePolicy(sizePolicy1);
         btn_6->setFont(font);
         btn_6->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(213, 219, 219);\n"
@@ -807,8 +812,8 @@ public:
 
         btn_9 = new QPushButton(horizontalLayoutWidget);
         btn_9->setObjectName(QStringLiteral("btn_9"));
-        sizePolicy.setHeightForWidth(btn_9->sizePolicy().hasHeightForWidth());
-        btn_9->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_9->sizePolicy().hasHeightForWidth());
+        btn_9->setSizePolicy(sizePolicy1);
         btn_9->setFont(font);
         btn_9->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(213, 219, 219);\n"
@@ -829,8 +834,8 @@ public:
 
         btn_3 = new QPushButton(horizontalLayoutWidget);
         btn_3->setObjectName(QStringLiteral("btn_3"));
-        sizePolicy.setHeightForWidth(btn_3->sizePolicy().hasHeightForWidth());
-        btn_3->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_3->sizePolicy().hasHeightForWidth());
+        btn_3->setSizePolicy(sizePolicy1);
         btn_3->setFont(font);
         btn_3->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(213, 219, 219);\n"
@@ -851,8 +856,8 @@ public:
 
         btn_2 = new QPushButton(horizontalLayoutWidget);
         btn_2->setObjectName(QStringLiteral("btn_2"));
-        sizePolicy.setHeightForWidth(btn_2->sizePolicy().hasHeightForWidth());
-        btn_2->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_2->sizePolicy().hasHeightForWidth());
+        btn_2->setSizePolicy(sizePolicy1);
         btn_2->setFont(font);
         btn_2->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(213, 219, 219);\n"
@@ -873,8 +878,8 @@ public:
 
         btn_minus = new QPushButton(horizontalLayoutWidget);
         btn_minus->setObjectName(QStringLiteral("btn_minus"));
-        sizePolicy.setHeightForWidth(btn_minus->sizePolicy().hasHeightForWidth());
-        btn_minus->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_minus->sizePolicy().hasHeightForWidth());
+        btn_minus->setSizePolicy(sizePolicy1);
         btn_minus->setFont(font);
         btn_minus->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(46, 134, 193);\n"
@@ -895,8 +900,8 @@ public:
 
         btn_1 = new QPushButton(horizontalLayoutWidget);
         btn_1->setObjectName(QStringLiteral("btn_1"));
-        sizePolicy.setHeightForWidth(btn_1->sizePolicy().hasHeightForWidth());
-        btn_1->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_1->sizePolicy().hasHeightForWidth());
+        btn_1->setSizePolicy(sizePolicy1);
         btn_1->setFont(font);
         btn_1->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(213, 219, 219);\n"
@@ -917,8 +922,8 @@ public:
 
         btn_5 = new QPushButton(horizontalLayoutWidget);
         btn_5->setObjectName(QStringLiteral("btn_5"));
-        sizePolicy.setHeightForWidth(btn_5->sizePolicy().hasHeightForWidth());
-        btn_5->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_5->sizePolicy().hasHeightForWidth());
+        btn_5->setSizePolicy(sizePolicy1);
         btn_5->setFont(font);
         btn_5->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(213, 219, 219);\n"
@@ -939,8 +944,8 @@ public:
 
         btn_dot = new QPushButton(horizontalLayoutWidget);
         btn_dot->setObjectName(QStringLiteral("btn_dot"));
-        sizePolicy.setHeightForWidth(btn_dot->sizePolicy().hasHeightForWidth());
-        btn_dot->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_dot->sizePolicy().hasHeightForWidth());
+        btn_dot->setSizePolicy(sizePolicy1);
         btn_dot->setFont(font);
         btn_dot->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(46, 134, 193);\n"
@@ -961,8 +966,8 @@ public:
 
         btn_eqal = new QPushButton(horizontalLayoutWidget);
         btn_eqal->setObjectName(QStringLiteral("btn_eqal"));
-        sizePolicy.setHeightForWidth(btn_eqal->sizePolicy().hasHeightForWidth());
-        btn_eqal->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_eqal->sizePolicy().hasHeightForWidth());
+        btn_eqal->setSizePolicy(sizePolicy1);
         btn_eqal->setFont(font);
         btn_eqal->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(46, 134, 193);\n"
@@ -983,8 +988,8 @@ public:
 
         btn_0 = new QPushButton(horizontalLayoutWidget);
         btn_0->setObjectName(QStringLiteral("btn_0"));
-        sizePolicy.setHeightForWidth(btn_0->sizePolicy().hasHeightForWidth());
-        btn_0->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_0->sizePolicy().hasHeightForWidth());
+        btn_0->setSizePolicy(sizePolicy1);
         btn_0->setFont(font);
         btn_0->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(213, 219, 219);\n"
@@ -1005,8 +1010,8 @@ public:
 
         btn_devide = new QPushButton(horizontalLayoutWidget);
         btn_devide->setObjectName(QStringLiteral("btn_devide"));
-        sizePolicy.setHeightForWidth(btn_devide->sizePolicy().hasHeightForWidth());
-        btn_devide->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(btn_devide->sizePolicy().hasHeightForWidth());
+        btn_devide->setSizePolicy(sizePolicy1);
         btn_devide->setFont(font);
         btn_devide->setStyleSheet(QLatin1String("QPushButton {\n"
 "  background-color: rgb(46, 134, 193);\n"
